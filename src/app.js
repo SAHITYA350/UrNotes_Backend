@@ -5,7 +5,13 @@ const postRoutes = require('./routes/post.routes');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://urnotes-frontend.onrender.com" // Update this with your actual Render URL
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 // Routes
