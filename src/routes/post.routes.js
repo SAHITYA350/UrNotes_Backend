@@ -6,7 +6,7 @@ const router = express.Router();
 
 const upload = multer({ storage: multer.memoryStorage() });
 
-router.get('/', getPosts);
+router.get('/', protect, getPosts);
 router.post('/', protect, upload.single('image'), createPost);
 router.put('/:id', protect, upload.single('image'), updatePost);
 router.delete('/:id', protect, deletePost);
