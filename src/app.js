@@ -8,9 +8,12 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://urnotes-frontend.onrender.com" // Update this with your actual Render URL
+        "https://urnotes.onrender.com",
+        "https://urnotes-frontend.onrender.com"
     ],
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 
